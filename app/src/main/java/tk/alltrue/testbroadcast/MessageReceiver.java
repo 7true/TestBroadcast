@@ -9,11 +9,19 @@ public class MessageReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        // TODO: This method is called when the BroadcastReceiver is receiving
         // an Intent broadcast.
         Toast.makeText(context, "Обнаружено сообщение: " +
                         intent.getStringExtra("tk.alltrue.testbroadcast.Message"),
                 Toast.LENGTH_LONG).show();
+
+
+        if (intent.getAction().equalsIgnoreCase("android.intent.action.ACTION_POWER_DISCONNECTED")) {
+            String message = "Обнаружено сообщение "
+                    + intent.getAction();
+
+            Toast.makeText(context, message,
+                    Toast.LENGTH_LONG).show();
+        }
         //throw new UnsupportedOperationException("Not yet implemented");
     }
 }

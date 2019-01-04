@@ -12,7 +12,8 @@ public class BootReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         mContext = context;
         String action = intent.getAction();
-        if (action.equalsIgnoreCase(BOOT_ACTION)) {
+        //if (action.equalsIgnoreCase(BOOT_ACTION)) {
+        if (intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)) {
             // здесь ваш код
             // например, запускаем уведомление
             //Intent intent = new Intent(context, intent);

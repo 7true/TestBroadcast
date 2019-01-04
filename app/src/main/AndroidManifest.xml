@@ -27,6 +27,10 @@
             <intent-filter>
                 <action android:name="tk.alltrue.testbroadcast.CAT" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"></action>
+            </intent-filter>
+
         </receiver>
 
         <receiver android:enabled="true" android:name=".BootReceiver"
